@@ -1,7 +1,5 @@
 var fs = require("fs");
 
-// TODO make a split pattern!
-
 exports.parse = function (path, delimiter, rowHandler) {
     
     // ckeck arguments
@@ -59,7 +57,8 @@ exports.parse = function (path, delimiter, rowHandler) {
                     ++current;
                     
                     // fire callback with row data
-                    rowHandler(null, rows[current].split(delimiter), handleRow);
+                    //rows[current].split(delimiter)
+                    rowHandler(null, CSVToArray(rows[current], delimiter)[0], handleRow);
                 }
                 
                 // buffer, offset,
@@ -95,7 +94,8 @@ exports.parse = function (path, delimiter, rowHandler) {
                                 ++current;
                                 
                                 //fire callback with row data
-                                rowHandler(null, rows[current].split(delimiter), handleRow);
+                                //rows[current].split(delimiter)
+                                rowHandler(null, CSVToArray(rows[current], delimiter)[0], handleRow);
                             }
                             
                             // check if it's the last row
@@ -107,7 +107,8 @@ exports.parse = function (path, delimiter, rowHandler) {
                                 last = true;
                                 
                                 // fire callback with last row
-                                rowHandler(null, rows[0].split(delimiter), handleRow);
+                                //rows[0].split(delimiter)
+                                rowHandler(null, CSVToArray(rows[current], delimiter)[0], handleRow);
                             }
                         }
                     });
