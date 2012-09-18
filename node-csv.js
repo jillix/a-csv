@@ -23,7 +23,7 @@ exports.parse = function (path, delimiter, rowHandler) {
     }
     
     // open file
-    fs.open(path, 'r', function (err, fd) {
+    fs.open(path, "r", function (err, fd) {
         
         if (err) {
             
@@ -35,30 +35,16 @@ exports.parse = function (path, delimiter, rowHandler) {
             var length = 8129; //8kb
             var buffer = "";
             var position = 0;
-            var current = 0;
+            var current = -1;
             var rows = [];
             var last = false;
             var handleRow = function () {
                 
-                // end if last is true
-                if (last) {
-                    
-                    // close file
-                    fs.close(fd, function(err) {
-                        
-                        rowHandler(err, null);
-                    });
-                }
-                
                 // fire callbacks if there still rows to emit
-                else if (current + 1 < rows.length) {
-                    
-                    // increment pointer
-                    ++current;
-                    
+                if (rows[++current]) {
+                
                     // fire callback with row data
-                    //rows[current].split(delimiter)
-                    rowHandler(null, CSVToArray(rows[current], delimiter)[0], handleRow);
+                    rowHandler(null, CSVToArray(rows[current], delimiter), handleRow);
                 }
                 
                 // buffer, offset,
@@ -79,36 +65,38 @@ exports.parse = function (path, delimiter, rowHandler) {
                             buffer += data;
                             
                             // create rows
-                            rows = buffer.split("\n");
+                            rows = buffer.split(/\n|\r/);
                             
-                            // reset current row status
-                            current = -1;
+                            //set buffer to the last "incomplete" row
+                            buffer = rows.pop();
                             
-                            // if there are rows..
-                            if (rows.length > 1) {
+                            if (bytesRead < length && rows.length == 0) {
                                 
-                                //set buffer to the last "incomplete" row
-                                buffer = rows.pop();
-                                
-                                //increment pointer
-                                ++current;
-                                
-                                //fire callback with row data
-                                //rows[current].split(delimiter)
-                                rowHandler(null, CSVToArray(rows[current], delimiter)[0], handleRow);
+                                fs.close(fd, function() {
+                                    
+                                    // get last row if csv file has no \r or \n at the end
+                                    if (buffer) {
+                                        
+                                        // fire callback with row data
+                                        rowHandler(null, CSVToArray(buffer, delimiter), function() {
+                                            
+                                            // terminate csv parsing
+                                            rowHandler(null, null, function () {});
+                                        });
+                                    }
+                                    else {
+                                        
+                                        // terminate csv parsing
+                                        rowHandler(null, null, function () {});
+                                    }
+                                });
                             }
+                            else {
+                                                                
+                                // reset current row status
+                                current = -1;
                             
-                            // check if it's the last row
-                            else if (bytesRead != length) {
-                                
-                                // TODO check if there are more then one row left
-                                
-                                // ensure that in the next round is finish
-                                last = true;
-                                
-                                // fire callback with last row
-                                //rows[0].split(delimiter)
-                                rowHandler(null, CSVToArray(rows[current], delimiter)[0], handleRow);
+                                handleRow();
                             }
                         }
                     });
@@ -145,37 +133,50 @@ exports.stringify = function (array, separator) {
                 else string += separator;
         }
         
-        string += "\r";
+        string += "\n\r";
     }
     
     return string;
 };
 
 // http://www.bennadel.com/blog/1504-Ask-Ben-Parsing-CSV-Strings-With-Javascript-Exec-Regular-Expression-Command.htm
-// This will parse a delimited string into an array of
-// arrays. The default delimiter is the comma, but this
+// This will parse a delimited string into an array.
+// The default delimiter is the comma, but this
 // can be overriden in the second argument.
 function CSVToArray(strData, strDelimiter) {
+    
+    // return if strData is empty
+    if (!strData) {
+        
+        return null;
+    }
+    
+    // Remove delimiter from the end of the string.
+    if (strData.substr(-1) === strDelimiter) {
+        
+        strData = strData.slice(0, -1);
+    }
+    
     // Check to see if the delimiter is defined. If not,
     // then default to comma.
-    strDelimiter = (strDelimiter || ",");
+    strDelimiter = strDelimiter || ",";
     
     // Create a regular expression to parse the CSV values.
     var objPattern = new RegExp((
         
         // Delimiters.
-        "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
+        "(\\" + strDelimiter + "|^)" +
         
         // Quoted fields.
         "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
         
         // Standard fields.
-        "([^\"\\" + strDelimiter + "\\r\\n]*))"
+        "([^\"\\" + strDelimiter + "]*))"
     ), "gi");
     
     // Create an array to hold our data. Give the array
     // a default empty first row.
-    var arrData = [[]];
+    var arrData = [];
     
     // Create an array to hold our individual pattern
     // matching groups.
@@ -183,36 +184,19 @@ function CSVToArray(strData, strDelimiter) {
     
     // Keep looping over the regular expression matches
     // until we can no longer find a match.
-    while (arrMatches = objPattern.exec( strData )){
+    while (arrMatches = objPattern.exec(strData)) {
     
-        // Get the delimiter that was found.
-        var strMatchedDelimiter = arrMatches[1];
-        
-        // Check to see if the given delimiter has a length
-        // (is not the start of string) and if it matches
-        // field delimiter. If id does not, then we know
-        // that this delimiter is a row delimiter.
-        if (strMatchedDelimiter.length && (strMatchedDelimiter != strDelimiter)) {
-            
-            // Since we have reached a new row of data,
-            // add an empty row to our data array.
-            arrData.push([]);
-        }
-        
-        // Now that we have our delimiter out of the way,
-        // let's check to see which kind of value we
+        // Let's check to see which kind of value we
         // captured (quoted or unquoted).
         var strMatchedValue;
+        
         if (arrMatches[2]) {
             
             // We found a quoted value. When we capture
             // this value, unescape any double quotes.
-            strMatchedValue = arrMatches[2].replace(
-                new RegExp( "\"\"", "g" ),
-                "\""
-            );
-         
-        } else {
+            strMatchedValue = arrMatches[2].replace(new RegExp("\"\"", "g"), "\"");
+        }
+        else {
         
             // We found a non-quoted value.
             strMatchedValue = arrMatches[3];
@@ -220,7 +204,7 @@ function CSVToArray(strData, strDelimiter) {
         
         // Now that we have our value string, let's add
         // it to the data array.
-        arrData[arrData.length - 1].push(strMatchedValue);
+        arrData.push(strMatchedValue);
     }
      
     // Return the parsed data.
