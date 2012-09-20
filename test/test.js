@@ -1,5 +1,5 @@
 var assert = require('assert');
-var CSV = require("../node-csv");
+var CSV = require("../a-csv");
 var file = "/test.csv";
 
 describe("CSV Module", function () {
