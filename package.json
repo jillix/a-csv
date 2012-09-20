@@ -1,0 +1,23 @@
+{
+    "name": "a-csv",
+    "version": "0.1.0",
+    "description": "A CSV parsing/stringify module",
+    "author": "Adrian Ottiker <adrian@ottiker.com>",
+    "devDependencies": {
+        "mocha": "1.x.x"
+    },
+    "scripts": {
+        "test": "mocha"
+    },
+    "engine": "node >= 0.8.0",
+    "keywords": [
+        "csv",
+        "parse",
+        "parser",
+        "stringify"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/adioo/a-csv"
+    }
+}
