@@ -1,23 +1,33 @@
 var assert = require('assert');
 var CSV = require("../node-csv");
-var file = process.argv[2] || "/test.csv";
+var file = "/test.csv";
 
-CSV.parse(__dirname + file, ";", function (err, row, next) {
+describe("CSV Module", function () {
     
-    if (err) {
+    describe("parse", function () {
         
-        console.log(err);
-    }
-    
-    if (row) {
-        
-        console.log(row);
-    }
-    
-    else {
-        
-        console.log("END");
-    }
-    
-    next();
+        it("should parse witout error", function(done) {
+            
+            CSV.parse(__dirname + file, ";", function (err, row, next) {
+                
+                if (err) {
+                    
+                    return done(err);
+                }
+                
+                if (row && !(row instanceof Array)) {
+                    
+                    throw new Error("row should be an array");
+                }
+                
+                if (!row) {
+                    
+                    assert.deepEqual(null, row, "row should be null, to indicate the end of parsing");
+                    done();
+                }
+                
+                next();
+            });
+        });
+    });
 });
