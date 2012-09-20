@@ -1,4 +1,5 @@
 var fs = require("fs");
+var defDelimiter = ",";
 
 exports.parse = function (path, delimiter, rowHandler) {
     
@@ -14,7 +15,7 @@ exports.parse = function (path, delimiter, rowHandler) {
     
     if (typeof delimiter != "string") {
         
-        delimiter = ";";
+        delimiter = defDelimiter;
     }
     
     if (typeof path != "string") {
@@ -67,7 +68,7 @@ exports.parse = function (path, delimiter, rowHandler) {
                             // create rows
                             rows = buffer.split(/\n|\r/);
                             
-                            //set buffer to the last "incomplete" row
+                            // set buffer to the last "incomplete" row
                             buffer = rows.pop();
                             
                             if (bytesRead < length && rows.length == 0) {
@@ -108,13 +109,11 @@ exports.parse = function (path, delimiter, rowHandler) {
     });
 };
 
-//array to string
-exports.stringify = function (array, separator) {
-
-    if (!separator) {
-        
-        separator = ";";
-    }
+// array to string
+exports.stringify = function (array, delimiter) {
+    
+    // make shure theres always a delimiter
+    delimiter = delimiter || defDelimiter;
         
     var string = "";
     
@@ -128,9 +127,16 @@ exports.stringify = function (array, separator) {
                 
                 if (cell) {
                     
-                    string += cell.replace(/"/g, '\"') + separator;
+                    cell = cell.replace('"', '\\"');
+                    
+                    if (cell.indexOf(delimiter) > -1) {
+                        
+                        cell = '"' + cell + '"';
+                    }
+                    
+                    string += cell + delimiter;
                 }
-                else string += separator;
+                else string += delimiter;
         }
         
         string += "\n\r";
@@ -159,7 +165,7 @@ function CSVToArray(strData, strDelimiter) {
     
     // Check to see if the delimiter is defined. If not,
     // then default to comma.
-    strDelimiter = strDelimiter || ",";
+    strDelimiter = strDelimiter || defDelimiter;
     
     // Create a regular expression to parse the CSV values.
     var objPattern = new RegExp((
