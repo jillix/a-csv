@@ -1,6 +1,8 @@
 var fs = require("fs");
 var defDelimiter = ",";
 
+// TODO parse csv from network stream
+
 exports.parse = function (path, delimiter, rowHandler) {
     
     // ckeck arguments
@@ -108,6 +110,8 @@ exports.parse = function (path, delimiter, rowHandler) {
         }
     });
 };
+
+// TODO make stringify async
 
 // array to string
 exports.stringify = function (array, delimiter) {
