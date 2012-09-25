@@ -40,7 +40,6 @@ exports.parse = function (path, delimiter, rowHandler) {
             var position = 0;
             var current = -1;
             var rows = [];
-            var last = false;
             var handleRow = function () {
                 
                 // fire callbacks if there still rows to emit
@@ -160,6 +159,9 @@ function CSVToArray(strData, strDelimiter) {
         
         return null;
     }
+    
+    //convert to uft8
+    strData = strData.toString("urf8");
     
     // Remove delimiter from the end of the string.
     if (strData.substr(-1) === strDelimiter) {

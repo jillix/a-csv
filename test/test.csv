@@ -1,11 +1,145 @@
-A;AA;AA;"A;'"""A";
-A;AA;AA;AAA;
-A;AA;AA;AAA;
-A;AA;AA;AAA;
-A;AA;AA;AAA;
-A;AA;AA;AAA;
-A;AA;AA;AAA;
-A;AA;AA;AAA;
-A;AA;AA;AAA;
-A;AA;AA;AAA;
-A;AA;AA;AAA;
+Aktion;Sprache;click;Traumauto;Anrede;Vorname;Nachname;Adresse;PLZ;Ort;Geburtsdatum;eMail;Marke;Typ;Jahrgang;Kilometerstand;Gewinner Wettbewerb
+pimpmycar;de;enl;porsche;herr;Michael;Marthaler;Einschlagstrasse 50;4622;Egerkingen;14.02.1987;jamiroquai@ggs.ch;volvo;C30;2008;84500;
+pimpmycar;de;pmc;porsche;herr;Vincenzo;Di Cesare;Im Gugger 20;4106;Therwil;26.02.1972;dicesare@vtxmail.ch;vw;Tiguan;2009;30000;
+pimpmycar;de;enl;ford;herr;Adriano;Jäger;Hohenemserstrasse 20c;9444;Diepoldsau;28.10.1964;a.jaeger64@bluewin.ch;vw;Tiguan;2010;62000;
+pimpmycar;de;enl;porsche;herr;Marc;Roethlisberger;Rumiweg 17A;4900;Langenthal;21.09.1980;marc.roethlisberger@bluewin.ch;audi;A1;2010;17000;
+pimpmycar;de;enl;porsche;frau;Alexandra;Peier;am Herrenbrunnen 2a;4710;Balsthal;07.03.1975;sansi75@hotmail.com;alfa-romeo;156;2004;186000;
+pimpmycar;de;enl;alfa;frau;susanne;thommen;via luvini 3;6900;lugano;12.10.1968;susanita.paint@gmail.com;vw;Kaefer;1967;40000;
+pimpmycar;fr;enl;porsche;herr;Alain;SCHLUCHTER;Route de Pré-Marais 15;1233;Bernex;20.09.1973;aschluchter@mac.com;toyota;Verso;2011;150;
+pimpmycar;de;enl;ford;herr;Stefan;Ulrich;Kindergartenstrasse 12;8620;Wetzikon;29.08.1980;st.ul@hotmail.com;vw;Golf Variant;2002;130000;
+pimpmycar;it;enl;hyundai;herr;cimino;antonio;sunnebuelstrasse 2;8604;volketswil;18.02.1969;a.cimino@gmx.ch;hyundai;trajet crdi;2002;102000;
+pimpmycar;de;enl;porsche;herr;Urs;Aschwanden;Zwirnerstrasse 261;8041;Zürich;19.04.1970;aschi157@yahoo.de;chrysler;Voyager;2000;150000;
+pimpmycar;de;enl;porsche;herr;goran;pjevac;Feldlistr.17;9000;st.gallen;30.11.1974;go-san@hispeed.ch;subaru;impreza wrx;2001;215000;
+pimpmycar;de;enl;bmw;herr;Peter ;Schütter;Postfach 164;5004;Aarau;15.08.1955;peschue@bluewin.ch;hyundai;Santa Fe 2.7;2001;198`865;
+pimpmycar;de;enl;porsche;frau;Anett;Jach;Am Denkmal 2;9961;Tunzenhausen -Deutschland;02.11.1979;anett.jach@yahoo.de;vw;Passat;2005;163;
+pimpmycar;de;pmc;mercedes;herr;markus;kuhn;hintergasse 39;8253;diessenhofen;24.10.1979;maege@imblickwinkel.ch;vw;transporter;1984;300000;
+pimpmycar;de;pmc;alfa;frau;Christa;Frei;Torkelweg 7;9444;Diepoldsau;07.10.1980;christa.duerr@gmx.ch;ford;Galaxy;2000;178000;
+pimpmycar;it;fb;mercedes;frau;Cioffi;Sonia;Bonfolstrasse,2;4055;Basel;09.07.1966;scioffi@yplay.ch;vw;Passat;2002;150;
+pimpmycar;de;pmc;renault;frau;Martina;Balzer;Sonnenhof 25;8808;Pfäffikon SZ;16.05.1983;martina.balzer@gmail.com;renault;Grand Scenic;2004;100000;
+pimpmycar;de;pmc;renault;frau;Stephanie;Moser;Hofacherstrasse 12;5443;Niederrohrdorf;02.04.1981;steffi_moser@bluewin.ch;opel;Corsa Eco 1.0;1997;135000;Gewinnerin Family Car
+pimpmycar;de;gpp;bmw;herr;Rainer;Baumgärtner;Waagstrasse 3a;5043;Holziken;17.09.1958;rbaumgaertner@hispeed.ch;bmw;320i;2003;80700;
+pimpmycar;de;gp;alfa;frau;Nadine;Hertel;Lierenstrasse 41;5417;Untersiggenthal;27.01.1984;larshertel@bluewin.ch;skoda;Octavia;2007;203000;
+pimpmycar;de;fb;renault;frau;rinda;valzano;kirchrain 36;8810;horgen;19.01.1972;rindavalzano72@yahoo.de;kia;carnival;2002;115000;
+pimpmycar;it;fb;porsche;frau;Khali;Malika;Belvedere;6935;Bosco Luganese;20.11.1966;malika66@bluewin.ch;kia;carnival;2004;119000;Gewinner iPad
+pimpmycar;de;pmc;hyundai;frau;Janine;Berger;Hofacher 21;8627;Grüningen;20.09.1977;berger.janine@bluewin.ch;honda;jazz;2004;90000;
+pimpmycar;de;fb;renault;herr;Peter;Joachim;Schützenhausstrasse 72A;8424;Embrach;26.01.1962;peter.joachim@bluewin.ch;renault;Grand Espace 3.0;2003;160000;
+pimpmycar;fr;gpp;alfa;frau;Christelle;Renaud;Rte de BAuloz 1;1188;Gimel;30.08.1973;silamech@bluewin.ch;peugeot;4007;2009;25000;
+pimpmycar;de;fb;porsche;herr;Gert;Barizlovich;Bahnhofstrasse 6;2544;Bettlach;25.04.1965;boerboel@bluewin.ch;ford;Mondeo;1997;154000;
+pimpmycar;it;fb;porsche;frau;kever;christina;via del sole 10;6943;vezia;23.05.1980;c.kever@bluewin.ch;citroen;c3;2005;35000;
+pimpmycar;de;gp;porsche;frau;Sabrina;Lohri;Buchackernstr.1;8586;Erlen;16.07.1987;zimzim_15@gmx.ch;peugeot;106;2001;128000;
+pimpmycar;de;fb;porsche;herr;ADRIAN;Kunz;Hohle Gasse 21;8154;Oberglatt;08.09.1966;adrian-kunz4@bluewin.ch;mazda;XEDOS 6;1997;229000;
+pimpmycar;de;fb;alfa;frau;Karin-Daniela;Guglielmana;Moosgasse 22;3282;Bargen bei Bern;10.12.1968;info@barockpinto.ch;audi;A4  2.5 TDIt;1999;230000;
+pimpmycar;de;fb;ford;frau;Gisela;Volkmann;Diechtersmattstrasse 3;6074;Giswil CH;21.01.1964;waukatz@yahoo.de;mitsubishi;Colt;1985;145000;
+pimpmycar;de;gp;renault;herr;thomas;Seiler-Zobrist;Hauptstrasse 50A;5032;Aarau Rohr;09.11.1983;bocki_4@hotmail.com;peugeot;306;2003;160000;
+pimpmycar;de;pmc;bmw;frau;Nadia;Cristofari;Weidlistrasse 5;9500;Wil;22.10.1983;nadia@cristofari.ch;fiat;Punto;2008;35000;
+pimpmycar;de;pmc;bmw;frau;Nadia;Cristofari;Weidlistr.5;9500;Wil;22.10.1983;nadia@cristofari.ch;fiat;Punto;2008;35000;
+pimpmycar;de;pmc;mercedes;herr;Giuliano;Russo;Rütistrasse 4b;9542;Münchwilen;07.05.1976;giuliano.russo@hotmail.com;fiat;Branvo 1.4 T-Jet Sport;2009;24000;Gewinner iPad
+pimpmycar;de;fb;renault;frau;Paola;Bocchini;Kirchstrasse 11a;3065;Bolligen;10.08.1965;fortuna.wolke7@gmail.com;other; Keines;200;0;
+pimpmycar;de;fb;ford;frau;Nadine;Kruckenberg;Pappelstrasse 2a;8593;Kesswil;15.09.1983;ladyinred.83@gmx.ch;opel;Zafira;2003;190000;
+pimpmycar;de;pmc;;herr;Loa;Walter;Heimatstrasse 4;8645;Jina;06.09.1965;loa.walter@bluewin.ch;vw;Passat;2008;100000;
+pimpmycar;de;fb;;frau;Raffaela;Richter;Werksiedlung 26A;7107;Safien Platz;06.03.1979;raffaelade@bluewin.ch;audi;S4;2000;200000;
+pimpmycar;de;fb;;frau;Christine;Berchtold;Dörflistrasse 1;8933;Maschwanden;08.11.1974;christine.berchtold1@gmx.ch;renault;Senic;2003;100000;
+pimpmycar;de;pmc;;herr;Urs;Brändli;187;5600;Aarau;03.05.1977;rolf.mattes@mattesgraphics.com;fiat;Punto;2004;49000;
+pimpmycar;de;pmc;;frau;Simone;Bolliger;187;8032;Zürich;05.07.1972;rolf.mattes@mattesgraphics.com;peugeot;309;1999;165000;
+pimpmycar;de;pmc;;herr;René;Michel;187;8006;Zürich;08.02.1979;rolf.mattes@mattesgraphics.com;alfa-romeo;156;2000;156000;
+pimpmycar;de;pmc;;frau;Susanna;Bechtold;187;8032;Zürich;12.03.1982;rolf.mattes@mattesgraphics.com;volvo;S40;2003;189000;
+pimpmycar;de;pmc;;herr;Andreas;Vogt;187;8852;Altendorf;11.11.1977;fabio.gartenmann@jillix.com;vw;Golf;1999;180000;
+pimpmycar;de;pmc;;herr;Eros;Toscana;187;8840;Einsiedeln;16.01.1966;fabio.gartenmann@jillix.com;citroen;Xsara;2003;155000;
+pimpmycar;de;pmc;;frau;Anna;Schmid;187;8000;Zürich;22.10.1981;fabio.gartenmann@jillix.com;mazda;MX-5;2006;40000;
+pimpmycar;de;pmc;;herr;Otto;Hagen;187;8000;Zürich;10.10.1978;fabio.gartenmann@jillix.com;ford;Fiesta;1995;190000
+pimpmycar;de;pmc;;frau;Monika;Casarico;187;8808;Pfäffikon;16.11.1980;fabio.gartenmann@jillix.com;fiat;Punto;2005;93000
+pimpmycar;de;pmc;;herr;Markus;Allemann;187;8853;Lachen;25.06.1971;fabio.gartenmann@jillix.com;audi;A3;1999;150000
+pimpmycar;de;pmc;;herr;Dominik;Leimbacher;187;8000;Zürich;11.04.1965;fabio.gartenmann@jillix.com;subaru;Impreza;1995;160000
+pimpmycar;de;pmc;;herr;Ronnie;Menderez;187;4000;Basel;03.12.1976;fabio.gartenmann@jillix.com;toyota;Celica;1997;135000
+pimpmycar;de;pmc;;frau;Marina;Nussbaumer;187;8862;Schübelbach;30.08.1980;fabio.gartenmann@jillix.com;mitsubishi;Lancer;2000;167000
+pimpmycar;de;pmc;;herr;Patricia;Schneider;187;8805;Richterswil;12.06.1982;rolf.mattes@jillix.com;honda;Civic;2001;111000
+pimpmycar;fr;enl;porsche;herr;raymond;kamerzin;perce-neige 72;1893;muraz;14.02.1960;raymondkamerzin007@hotmail.ch;ford-usa;t-bird;1955;50000
+pimpmycar;de;gp;porsche;herr;Roland;Wachter;Frohwiesweg 6;8488;Turbenthal;12.03.1964;roland@wachter-clan.ch;toyota;Avensis;2001;170600
+pimpmycar;de;gp;porsche;herr;Danayiyen;Ali;Rickenstrasse 8;8733;Eschenbach;25.10.1988;danayiyenali@gmx.ch;vw;Golf IV / Corrado;1998;235000
+pimpmycar;de;gpp;porsche;frau;Perrine;Oechslin;Waagtalstrasse 10;8842;Unteriberg;26.03.1982;perrine.oechslin@gmx.ch;mazda;6 Kombi;2002;100000
+pimpmycar;de;gpp;porsche;frau;Caroline;Raimondi;Im Heumoos 13e;8906;Bonstetten;07.05.1976;postbox@dressageria.ch;suzuki;Grand Vitara;2001;150000
+pimpmycar;de;enl;porsche;herr;Alexander;Nägeli;Höhenweg 3;5722;Gränichen;04.05.1993;alex.naegeli@hotmail.com;vw;California;2000;100000
+pimpmycar;de;fb;ford;herr;Ruedi;Schaller;Via Nova 17;7403;Rhäzüns;09.03.1987;ruedi_schaller@bluewin.ch;subaru;Impreza;2009;40000
+pimpmycar;de;fb;porsche;frau;Brigitt;Krebser;Multbergstr.8;8422;Pfungen;23.03.1962;brigittk3@gmail.com;audi;A3;2002;150000
+pimpmycar;de;fb;porsche;herr;Patrick;Rüeger;Lindenhof 4;8604;Volketswil;02.09.1973;liggenstorfer@gmx.ch;audi;A4;2001;170000
+pimpmycar;de;fb;porsche;frau;Jenny;Egli;Josefstrasse 14;5432;Neuenhof;03.12.1987;jenny0312@gmx.net;renault;Clio;2003;133000
+pimpmycar;de;fb;bmw;herr;Reto;Freudemann;Unterdorfstrasse 7;5082;Kaisten;07.04.1988;reto_freudemann@hotmail.com;renault;Clio;1993;185971
+pimpmycar;de;gp;porsche;frau;Jessica;Lang;Winkel 5;9245;oberbüren;10.10.1989;l.alessia@bluemail.ch;renault;clio;1999;110000
+pimpmycar;de;fb;porsche;herr;Thomas;Keller;Forchstrasse 107;8132;Egg;07.01.1964;arting@bluemail.ch;dacia;Sandero;2010;30100
+pimpmycar;de;gp;porsche;herr;roland;bertschi;obere breiten 7;8108;dällikon;17.04.1967;rolandbertschi@bluemail.ch;suzuki;Jazz;2008;30000
+pimpmycar;de;enl;mercedes;frau;Ilma;Wegmuller de freitas;wegmuller@ig.com.br;3415;Rüegsauschachen;26.06.1976;wegmuller@ig.com.br;mercedes-benz;GL-Klassiker;2002;10.00km
+pimpmycar;de;fb;porsche;herr;Daniel;Vonrufs;Ormisstrasse 95;8706;Meilen;08.09.1971;daniel@vonrufs.com;skoda;Oktavia;2002;180000
+pimpmycar;de;pmc;porsche;herr;Stefano;Bocchini;Kirchstrasse 11a;3065;Bolligen;14.02.1963;stefanob@gmx.net;other;Honda Varadero XL1000V;2009;34000
+pimpmycar;de;enl;bmw;frau;Cristina;Stocker;Binzacherweg 25c;8166;Niederweningen;16.06.1977;mismeeil@gmx.ch;renault;Clio;2004;71000
+pimpmycar;de;enl;porsche;herr;Raoul;Kühnis;Hohlstrasse 507;8048;Zürich;20.09.1980;rkuhnis@hotmail.com;mercedes-benz;S430;2000;100000
+pimpmycar;de;fb;alfa;frau;Sarah;Salzmann;Eggweg 13;3065;Bolligen;04.11.1986;kamilla-86@hotmail.com;renault;scenic;2000;200000
+pimpmycar;fr;enl;porsche;herr;Ernesto;Perini;Av. Francois-Besson 7;1217;Meyrin;01.11.1981;ernesto.perini@bluewin.ch;citroen;C2 by loeb;2007;35000
+pimpmycar;de;enl;mercedes;herr;daniel;meier;bollenhofstr.4;8953;Dietikon;25.04.1955;daniele-meier@bluewin.ch;mazda;626.2;1997;150
+pimpmycar;de;gp;renault;herr;Peter;Schürpf;Hauptstrasse 17;4492;Tecknau;11.10.1968;pschuerpf@hotmail.com;opel;Corsa;1999;120000
+pimpmycar;de;fb;renault;frau;REGULA;DALIPI;BÜRGLISTR.4;9000;ST.GALLEN;11.08.1969;regula.dalipi@hotmail.de;renault;GRAND ESPACE 2.0;2011;50000
+pimpmycar;de;fb;renault;herr;Andreas;Wohlmuth;Hasenbühlweg 2;9410;Heiden;05.02.1976;office@wohlmuth.cc;ford;Galaxy;1998;260000
+pimpmycar;fr;fb;porsche;herr;Alexandre;MARCHI;Rue du Grand-Bureau 27;1227;Les Acacias GE;06.06.1989;a.marchi@sunrise.ch;toyota;Prévia;2001;135000
+pimpmycar;de;gpp;porsche;frau;Alexandra;von Gunten;Sonnenweg 6;3625;Heiligenschwendi;24.01.1979;alexandra.vongunten@bluewin.ch;vw;Sharan;2005;250000
+pimpmycar;fr;fb;mercedes;herr;Georges;Amey;Chemin des Fiottets 15;2400;Le Locle;23.11.1965;georgesamey@hotmail.com;suzuki;SX4;2008;50000
+pimpmycar;de;fb;bmw;herr;Can;Sen;Spranglentr.63;8303;Bassersdorf;15.09.1965;csen@hispeed.ch;renault;Espace;2011;90000
+pimpmycar;fr;fb;porsche;herr;josé lino ;varela borges;industrie 25;1870;Monthey;07.04.1983;lino77vb@hotmail.com;fiat;freemont;2011;15000
+pimpmycar;fr;fb;mercedes;herr;Vitor;Ramalho;Chemin Buvelot 5b;1110;Morges;19.05.1977;v.ramalho77@hotmail.com;citroen;c4 coupe;2005;110000
+pimpmycar;de;fb;bmw;herr;Erwin;Iten;Hörnlistrasse 5;6403;Küssnacht am Rigi;28.07.1959;erwin.iten@gmail.com;opel;Astra;2003;120000
+pimpmycar;de;enl;ford;frau;Elisabeth;Scerb;Obermatt 1;3633;Amsoldingen;02.02.1978;escherb@bluewin.ch;ford;focus;2003;120000
+pimpmycar;de;fb;alfa;frau;Nadia;Vuignier;82 rte du vélodrome;1228;plan-les-ouates;27.09.1974;nadia.vuignier@gmail.com;alfa-romeo;156;1998;126000
+pimpmycar;de;enl;porsche;herr;Marco;Kunz;Kreuzhausweg 2;6010;Kriens;21.07.1979;masterkun@gmx.ch;fiat;Punto;2009;30000
+pimpmycar;fr;pmc;porsche;herr;Eric;Tundo;Champ-du-Bois 4;1052;Le Mont-sur-Lausanne;03.01.1983;eric.tundo@gmail.com;vw;Touran;2007;72534
+pimpmycar;de;enl;porsche;frau;Nicole;Schmid;Feldweg 1;8134;Adliswil;29.09.1975;nicole-schmid@hispeed.ch;honda;jazz;2009;11000
+pimpmycar;de;fb;porsche;frau;Dominique;Vögeli;Lerchenstrasse 38;4147;Aesch;25.02.1966;dominique.voegeli@web.de;jaguar;XF;2011;50
+pimpmycar;de;fb;bmw;frau;Nathalie F.J.;Ruoss Dagher;Limmattalstrasse 177;8049;ZÜRICH;30.09.1967;ruoss.nathalie@hispeed.ch;bmw;325i;2008;200000
+pimpmycar;de;enl;bmw;frau;Natasha;Karanja;Eichhaldering 27;5037;Muhen;03.04.1976;natasha.karanja@bluewin.ch;ford;Kuga;2011;7000
+pimpmycar;de;enl;bmw;herr;Martin;Kinzel;Eichhaldering 27;5037;Muhen;16.09.1969;mkinzel@bluewin.ch;ford;Fiesta;2009;18000
+pimpmycar;de;enl;porsche;herr;Thomas;Keller;Forchstrasse 107;8132;Egg;07.01.1964;arting@bluemail.ch;dacia;Sandero;2010;14000
+pimpmycar;de;enl;porsche;herr;Christof;Kolb;Schuelgässli 8;8226;Schleitheim;23.10.1964;christof_kolb@bluewin.ch;skoda;Superb;2010;10000
+pimpmycar;de;fb;bmw;herr;Markus;Wagner;Hauptstrasse 117;4416;Bubendorf;12.10.1963;markuswagner@bman.ch;kia;Magentis CDI;2008;53000
+pimpmycar;fr;enl;hyundai;herr;Stéphane;Amos;Signèse 16;3960;Sierre;11.12.1956;steamos@tvs2net.ch;hyundai;Tucson;2006;80000
+pimpmycar;de;enl;bmw;herr;Christoph;Lorenc;Blattenmoosstrasse 20;6014;Luzern;30.12.1982;chlogan@bluewin.ch;mazda;3 Sport 2.0l;2006;70000
+pimpmycar;fr;pmc;porsche;herr;Olivier;Sierro;3 Cheseaux d'Amont;1872;Troistorrents;25.04.1964;sierro@bluewin.ch;bmw;325 i touring;2007;37000
+pimpmycar;de;enl;mercedes;herr;Urs;Leuenberger;Bäumlisächerstr. 37;8907;Wettswil;29.05.1960;urs-leuenberger@bluewin.ch;renault;Mégane RS;2004;178000
+pimpmycar;fr;enl;porsche;frau;Sophie;Pantet;Rte des Rosalys 320 ;1619;Les Paccots;20.07.1990;sophiepantet@bluewin.ch;subaru;imprenza;1999;150000
+pimpmycar;de;enl;mercedes;herr;Thomas;Krüsi;Kirchgass 15;9442;Berneck;23.03.1970;kruesi70@bluewin.ch;renault;Laguna;2005;75000
+pimpmycar;de;fb;ford;herr;michael;hochuli;eigenstr.6;3367;Thörigen;26.01.1975;michael_hochuli@hotmail.de;opel;vectra;1996;130000
+pimpmycar;it;fb;ford;herr;giovanettina;igor;san gottardo 26a;6828;balerna;08.04.1970;igor6830@msn.com;vw;golf 3;1997;250000
+pimpmycar;de;pmc;bmw;herr;Badilatti ;Daniele ;Via da Clalt 308;7742;poschiavo;24.07.1979;badilattis@bluewin.ch;audi;allroad;2006;110000
+pimpmycar;de;pmc;bmw;frau;Michelle;Weber;Höhli 12;4316;Hellikon;10.04.1977;Devilin.michelle666@gmail.com;honda;CRX Del Sol;1997;202500
+pimpmycar;de;pmc;bmw;frau;Michelle;Weber;Höhli 12;4316;Hellikon;10.04.1977;Devilin.michelle666@gmail.com;honda;CRX Del Sol;1997;202500
+pimpmycar;de;pmc;mercedes;herr;Ralph;Lutz;Hohlgasse 5;5313;Klingnau;11.12.1966;r.lutz@bluewin.ch;renault;Megane;2004;96000
+pimpmycar;de;enl;renault;herr;Jörg;Müller;Allmendstrasse 3;4950;Huttwil;26.03.1977;cowboy197731@yahoo.de;nissan;Sunny;1988;110000
+pimpmycar;fr;enl;mercedes;herr;Amel;Begovic;Rue de la Servette 71;1202;Genève;13.10.1979;amel98@bluemail.ch;bmw;523i;1997;180000;
+pimpmycar;de;enl;hyundai;herr;Christian;Auer-Schiess;Landstrasse 432;7214;Grüsch;03.10.1976;christian-auer@bluewin.ch;hyundai;i 30;2008;64876;
+pimpmycar;de;enl;hyundai;frau;Melani8e;Rodrigues de Oliveira;Werkstrasse 26;3084;Wabern;26.10.1972;mh.deoliveira@bluewin.ch;hyundai;i30 ;2011;8200;
+pimpmycar;fr;enl;porsche;frau;Lauriana;Tatone;Rte de Lausanne 7;1610;Oron-la-Ville;05.05.1979;lauriana79@hotmail.com;citroen;C4picasso;2009;60000;
+pimpmycar;de;pmc;porsche;herr;Marcel;Müller;Mühlemattweg 8;3324;Hindelbank;18.11.1983;muellermarcel@gmx.ch;vw;Sharan 2.0 TDI;2010;12000;
+pimpmycar;fr;pmc;hyundai;herr;Leonardo;Liquiran;Ch. du Bois-de-Vaux 27;1007;Lausanne;26.12.1979;l_liquiran@hotmail.com;opel;Zafira 1.8;1999;260000;
+pimpmycar;fr;enl;hyundai;herr;Etienne;Zali;Chemin des Clos 6A;1020;Renens;06.02.1953;zalietienne@hotmail.com;chevrolet;Aveo;2009;22000;Gewinner iPad
+pimpmycar;fr;enl;mercedes;frau;Nadia;Chassot;Rue Paul-Vouga 115;2074;Marin-Epagnier;15.02.1967;nadia.chassot@bluewin.ch;honda;Jazz;2002;96000;
+pimpmycar;fr;enl;renault;frau;Martine;Wenger;rue de bourg 19;1860;Aigle;21.01.1958;martine.wenger@hispeed.ch;toyota;corolla;2001;150 000;
+pimpmycar;fr;enl;porsche;frau;Christelle;Joly;Rte d'Erbignon 45;1964;Conthey;21.09.1984;christelleb@bluemail.ch;other;éléctrique;2009;15000;
+pimpmycar;it;enl;ford;herr;Serena;Natan;Via alla Chiesa 24;6808;Torricella;11.12.1986;natan.serena@supsi.ch;seat;Ibiza Cupra;2010;27000;
+pimpmycar;de;pmc;mercedes;herr;Michael;Müntener;Toos 17;8577;Toos;17.06.1979;michaelmuentener@hotmail.com;skoda;Octavia ;2005;170000;
+pimpmycar;fr;enl;ford;herr;Alexis;Burke;Rte de la Laiterie 9;1745;Lentigny;17.08.1968;burke.a@romandie.com;ford;Galaxy;1998;184000;
+pimpmycar;de;enl;renault;frau;cornelia;schaad;dorf 4;9103;schwellbrunn;09.09.1979;coschaad@bluewin.ch;bmw;325 ixe30;1992;280000;
+pimpmycar;de;pmc;bmw;herr;Gähwiler;Silvan;Seefeldstrasse 22;8280;Kreuzlingen;12.08.1981;porsche9441983@gmx.ch;peugeot;307SW;2003;121000;
+pimpmycar;it;enl;hyundai;herr;cimino;antonio;sunnebuelstrasse   2;8604;volketswil;18.02.1969;a.cimino@gmx.ch;hyundai;trajet CRDi;2002;102;
+pimpmycar;de;enl;porsche;herr;Marcel;Müller;Mühlemattweg 8;3324;Hindelbank;18.11.1983;muellermarcel@gmx.ch;vw;Sharan 2.0 TDI;2010;12000
+pimpmycar;de;enl;mercedes;herr;Marc;Baumgartner;Engertswil 7;1717;St.Ursen;12.12.1984;tiff87@windowslive.com;audi;80;1988;105`000
+pimpmycar;de;pmc;porsche;frau;Angelika;Walden;Rhonesandstrasse 48;3900;Brig;02.02.1978;a_ruettimann@hotmail.com;toyota;Avensis;2005;79000
+pimpmycar;de;enl;porsche;frau;Natascha;Kunz Wyttenbach;Kanalweg 15;2552;Orpund;16.02.1971;k_natascha@hotmail.com;mercedes-benz;sprinter;1996;210000
+pimpmycar;de;enl;hyundai;frau;Inge;Ross;Hetnschenmatt 163 B;3153;Rüschegg-Gambach;28.04.1940;gurnigel@bluewin.ch;subaru;Justy;2001;130000
+pimpmycar;fr;enl;renault;herr;ernest;wittmer;chemin de la fontaine 8;1752;villars sur glane;13.06.1961;fontaine@hispeed.ch;renault;megane;1999;120000
+pimpmycar;de;pmc;bmw;herr;Stefan;Marti;Badenerstrasse 17B;5445;Eggenwil;11.07.1974;celi@bluewin.ch;toyota;Camry / Celica;1996;1 8/11
+pimpmycar;de;pmc;porsche;herr;Marco;Soares;Sandstrasse;3904;Naters;27.09.1987;soniami_90@hotmail.com;seat;Leon Streetcopa;2008;65000
+pimpmycar;de;enl;hyundai;frau;Dina;Weber;Hauptstrasse 20;5013;Niedergösgen;03.06.1978;peani@bluemail.ch;chevrolet;Nubira;2005;71000
+pimpmycar;de;enl;porsche;herr;Noah;Thus;Oehningerstrasse;8260;Stein am Rhein;20.10.1991;noah_tnt@hotmail.com;honda;Civic Type R;2002;120000
+pimpmycar;de;gp;bmw;herr;Andre;Häberli;Hubermatte ;6252;Dagmersellen;24.08.1975;don.haeberli@bluewin.ch;opel;Zafira;2006;170000
+pimpmycar;de;pmc;ford;herr;Marcel;Echser;Gotthardstrasse;6482;Gurtnellen;23.02.1965;marcelechser@bluewin.ch;opel;Zafira;2003;145000
+pimpmycar;de;enl;ford;herr;Andrea;de Pascali;Juchen 6;2577;Siselen;01.10.1972;de_pascali_andrea@yahoo.de;vw;Polo;1992;162000
+pimpmycar;de;enl;bmw;herr;Ruoss;Hanspeter;Neugasse 33a;9602;Bazenheid;10.04.1954;hampi.ruoss@bluewin.ch;seat;EXEO;2010;64000
+pimpmycar;de;pmc;porsche;frau;ciceri;nina;hochstrasse 55;8330;pfäffikon;10.08.1984;eifachiich@hotmail.com;opel;zafira opc;2006;67500
+pimpmycar;fr;enl;bmw;frau;Melissa;Belaz;Avenue Warnery 4;1110;Morges;15.03.1989;zikoozook@hotmail.com;other;Pas de voiture;1989;0
+pimpmycar;de;enl;porsche;herr;Petr;Zavadil;Rümlangstrasse 20;8154;Oberglatt;01.04.1965;internet-ch@bluewin.ch;bmw;E91 3er Touring;2011;1000
