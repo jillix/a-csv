@@ -1,23 +1,17 @@
 var fs = require("fs");
-var defDelimiter = ",";
+var iconv = require("iconv-lite");
 
 // TODO parse csv from network stream
-
-exports.parse = function (path, delimiter, rowHandler) {
+exports.parse = function (path, options, rowHandler) {
     
     // ckeck arguments
-    if (typeof delimiter == "function") {
+    if (typeof options == "function") {
         
-        rowHandler = delimiter;
+        rowHandler = options;
     }
     else if (typeof rowHandler != "function") {
         
         throw new Error("Callback is mandatory");
-    }
-    
-    if (typeof delimiter != "string") {
-        
-        delimiter = defDelimiter;
     }
     
     if (typeof path != "string") {
@@ -34,25 +28,45 @@ exports.parse = function (path, delimiter, rowHandler) {
         }
         else {
             
+            // default values
+            var delimiter = options.delimiter || ",";
+            var length = options.bufferSize || 8 * 1024;
+            var charset = options.charset || "utf8";
+            
             // init values
-            var length = 8129; //8kb
-            var buffer = "";
-            var position = 0;
+            var buffer = new Buffer(length);
+            var strBuffer = "";
             var current = -1;
             var rows = [];
+            var theEnd = false;
+            var size = 0;
             var handleRow = function () {
                 
-                // fire callbacks if there still rows to emit
-                if (rows[++current]) {
+                // fire rowHandler if there still rows to emit
+                if (typeof rows[++current] != "undefined") {
                 
                     // fire callback with row data
-                    rowHandler(null, CSVToArray(rows[current], delimiter), handleRow);
+                    rowHandler(null, CSVRowToArray(rows[current], delimiter), handleRow);
                 }
                 
-                // buffer, offset,
+                // if no more rows are left and the end is reached,
+                // close file end send empty callback
+                else if (theEnd) {
+                    
+                    fs.close(fd, function() {
+                    
+                        // end recursive function calls
+                        rowHandler(null, null, function () {}, size);
+                    });
+                }
+                
+                // read a bit more
                 else {
                     
-                    fs.read(fd, length, position, "utf8", function (err, data, bytesRead) {
+                    // fill buffer with emptiness
+                    buffer.fill("");
+                    
+                    fs.read(fd, buffer, 0, length, null, function (err, bytesRead, buffer) {
                         
                         if (err) {
                             
@@ -60,51 +74,46 @@ exports.parse = function (path, delimiter, rowHandler) {
                         }
                         else {
                             
-                            // update position
-                            position += bytesRead;
+                            size += bytesRead;
                             
-                            // update buffer
-                            buffer += data;
+                            // reset current row status
+                            current = -1;
+                            
+                            // update string buffer
+                            if (charset == "utf8") {
+                                
+                                strBuffer += buffer.toString();
+                            }
+                            // convert string to utf8
+                            else {
+                                
+                                // TODO recognize charset
+                                strBuffer += iconv.decode(buffer, charset);
+                            }
+                            
+                            // convert line endings
+                            strBuffer = strBuffer.replace(/\r\n|\n\r|\r/g, "\n");
                             
                             // create rows
-                            rows = buffer.split(/\n|\r/);
+                            rows = strBuffer.split(/\n/);
                             
                             // set buffer to the last "incomplete" row
-                            buffer = rows.pop();
+                            strBuffer = rows.pop();
                             
-                            if (bytesRead < length && rows.length == 0) {
+                            // indicate that no more data will be read from file
+                            if (bytesRead < length) {
                                 
-                                fs.close(fd, function() {
-                                    
-                                    // get last row if csv file has no \r or \n at the end
-                                    if (buffer) {
-                                        
-                                        // fire callback with row data
-                                        rowHandler(null, CSVToArray(buffer, delimiter), function() {
-                                            
-                                            // terminate csv parsing
-                                            rowHandler(null, null, function () {});
-                                        });
-                                    }
-                                    else {
-                                        
-                                        // terminate csv parsing
-                                        rowHandler(null, null, function () {});
-                                    }
-                                });
+                                theEnd = true;
                             }
-                            else {
-                                                                
-                                // reset current row status
-                                current = -1;
                             
-                                handleRow();
-                            }
+                            // continue
+                            handleRow();
                         }
                     });
                 }
             };
             
+            // start parsing
             handleRow();
         }
     });
@@ -130,7 +139,7 @@ exports.stringify = function (array, delimiter) {
                 
                 if (cell) {
                     
-                    cell = cell.replace('"', '\\"');
+                    cell = cell.replace('"', '\"');
                     
                     if (cell.indexOf(delimiter) > -1) {
                         
@@ -152,21 +161,12 @@ exports.stringify = function (array, delimiter) {
 // This will parse a delimited string into an array.
 // The default delimiter is the comma, but this
 // can be overriden in the second argument.
-function CSVToArray(strData, strDelimiter) {
+function CSVRowToArray(strData, strDelimiter) {
     
-    // return if strData is empty
-    if (!strData) {
+    // return if strData is an empty string
+    if (strData === "") {
         
-        return null;
-    }
-    
-    //convert to uft8
-    strData = strData.toString("urf8");
-    
-    // Remove delimiter from the end of the string.
-    if (strData.substr(-1) === strDelimiter) {
-        
-        strData = strData.slice(0, -1);
+        return "";
     }
     
     // Check to see if the delimiter is defined. If not,
@@ -192,7 +192,7 @@ function CSVToArray(strData, strDelimiter) {
     
     // Create an array to hold our individual pattern
     // matching groups.
-    var arrMatches = null;
+    var arrMatches = objPattern.exec(strData);
     
     // Keep looping over the regular expression matches
     // until we can no longer find a match.
