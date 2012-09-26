@@ -1,33 +1,32 @@
-var assert = require('assert');
+//var assert = require('assert');
 var CSV = require("../a-csv");
-var file = "/test.csv";
+var count = 0;
+var start = new Date().getTime();
 
-describe("CSV Module", function () {
+var file = __dirname + "/test.csv";
+var options = {
     
-    describe("parse", function () {
+    delimiter: ",",
+    charset: "utf8"
+}
+
+CSV.parse(file, options, function (err, row, next, bytes) {
+                
+    if (err) {
         
-        it("should parse witout error", function(done) {
-            
-            CSV.parse(__dirname + file, ";", function (err, row, next) {
-                
-                if (err) {
-                    
-                    return done(err);
-                }
-                
-                if (row && !(row instanceof Array)) {
-                    
-                    throw new Error("row should be an array");
-                }
-                
-                if (!row) {
-                    
-                    assert.deepEqual(null, row, "row should be null, to indicate the end of parsing");
-                    done();
-                }
-                
-                next();
-            });
-        });
-    });
+        return console.log(err);
+    }
+    
+    if (row !== null) {
+        
+        ++count;
+        
+        //console.log(row);
+        
+        next();
+    }
+    else {
+        
+        console.log(count + " Rows parsed in "+ ((new Date().getTime() - start) / 1000) + "s (" + (bytes / 1000000).toFixed(2) + "MB)");
+    }
 });
