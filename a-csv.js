@@ -139,9 +139,13 @@ exports.stringify = function (array, delimiter) {
                 
                 if (cell) {
                     
-                    cell = cell.replace('"', '\"');
-                    
+                    // use quotation marks when delimiter is found in a cell
                     if (cell.indexOf(delimiter) > -1) {
+                        
+                        if (cell.indexOf('"') > -1) {
+                            
+                            cell = cell.replace('"', '\"');
+                        }
                         
                         cell = '"' + cell + '"';
                     }
@@ -192,7 +196,7 @@ function CSVRowToArray(strData, strDelimiter) {
     
     // Create an array to hold our individual pattern
     // matching groups.
-    var arrMatches = objPattern.exec(strData);
+    var arrMatches = [];
     
     // Keep looping over the regular expression matches
     // until we can no longer find a match.
