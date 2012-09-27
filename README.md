@@ -1,9 +1,9 @@
-A nodejs CSV parser
+A nodejs CSV parser.
 
-##### install via npm: #####
+##### Install via npm #####
     npm install a-csv
     
-##### example: #####
+##### Example #####
     var CSV = require("a-csv");
     var file = "test.csv";
     var options = {
@@ -25,3 +25,6 @@ A nodejs CSV parser
             console.log("finish");
         }
     });
+
+##### License #####
+MIT
