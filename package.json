@@ -5,7 +5,7 @@
     "author": "Adrian Ottiker <adrian@ottiker.com>",
     "dependencies": {
         
-        "iconv-lite":  "*"
+        "iconv-lite":  "0.x.x"
     },
     "devDependencies": {
         "mocha": "1.x.x"
