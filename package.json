@@ -3,6 +3,10 @@
     "version": "0.1.5",
     "description": "A CSV parsing/stringify module",
     "author": "Adrian Ottiker <adrian@ottiker.com>",
+    "dependencies": {
+        
+        "iconv-lite":  "*"
+    },
     "devDependencies": {
         "mocha": "1.x.x"
     },
