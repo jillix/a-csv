@@ -167,10 +167,10 @@ exports.stringify = function (array, delimiter) {
 // can be overriden in the second argument.
 function CSVRowToArray(strData, strDelimiter) {
     
-    // return if strData is an empty string
+    // return if strData is an empty array
     if (strData === "") {
         
-        return "";
+        return [];
     }
     
     // Check to see if the delimiter is defined. If not,
