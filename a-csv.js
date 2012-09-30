@@ -122,44 +122,42 @@ exports.parse = function (path, options, rowHandler) {
 // TODO make stringify async
 
 // array to string
-exports.stringify = function (array, delimiter) {
+exports.stringify = ArrayToCSVRow;
+
+function ArrayToCSVRow (arry, delimiter, lineBreak) {
     
-    // make shure theres always a delimiter
-    delimiter = delimiter || defDelimiter;
-        
+    //default values
+    delimiter = delimiter || ",";
+    lineBreak = lineBreak || "\r\n";
+    
     var string = "";
     
-    for (var i = 0, l = array.length; i < l; ++i) {
+    for (var i = 0, l = arry.length; i < l; ++i) {
             
-        var item = array[i];
-        
-        for (var i1 = 0, l1 = item.length; i1 < l1; ++i1) {
+            var cell = arry[i] && arry[i].toString ? arry[i].toString() : "";
+            
+            if (cell) {
                 
-                var cell = item[i1] ? item[i1].toString() : "";
-                
-                if (cell) {
+                // use quotation marks when delimiter is found in a cell
+                if (cell.indexOf(delimiter) > -1) {
                     
-                    // use quotation marks when delimiter is found in a cell
-                    if (cell.indexOf(delimiter) > -1) {
+                    if (cell.indexOf('"') > -1) {
                         
-                        if (cell.indexOf('"') > -1) {
-                            
-                            cell = cell.replace('"', '\"');
-                        }
-                        
-                        cell = '"' + cell + '"';
+                        cell = cell.replace('"', '\"');
                     }
                     
-                    string += cell + delimiter;
+                    cell = '"' + cell + '"';
                 }
-                else string += delimiter;
-        }
-        
-        string += "\n\r";
+                
+                string += cell + delimiter;
+            }
+            else string += delimiter;
     }
     
+    string += lineBreak;
+    
     return string;
-};
+}
 
 // http://www.bennadel.com/blog/1504-Ask-Ben-Parsing-CSV-Strings-With-Javascript-Exec-Regular-Expression-Command.htm
 // This will parse a delimited string into an array.
