@@ -19,7 +19,7 @@ A nodejs CSV parser.
         
         if (row !== null) {
             console.log(row);
-            retrun next();
+            return next();
         }
         
         console.log("finish");
