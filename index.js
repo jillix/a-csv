@@ -54,7 +54,6 @@ exports.parse = function (path, options, rowHandler) {
                 else if (theEnd) {
                     
                     fs.close(fd, function() {
-                    
                         // end recursive function calls
                         rowHandler(null, null, function () {}, size);
                     });
@@ -98,7 +97,7 @@ exports.parse = function (path, options, rowHandler) {
                             rows = strBuffer.split(/\n/);
                             
                             // set buffer to the last "incomplete" row
-                            // strBuffer = rows.pop();
+                            if(rows[rows.length-1].length <= 5715) strBuffer = rows.pop();
                             
                             // indicate that no more data will be read from file
                             if (bytesRead < length) {
