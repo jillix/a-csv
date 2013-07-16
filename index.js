@@ -98,7 +98,7 @@ exports.parse = function (path, options, rowHandler) {
                             rows = strBuffer.split(/\n/);
                             
                             // set buffer to the last "incomplete" row
-                            strBuffer = rows.pop();
+                            // strBuffer = rows.pop();
                             
                             // indicate that no more data will be read from file
                             if (bytesRead < length) {
