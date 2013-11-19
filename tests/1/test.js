@@ -1,5 +1,5 @@
 //var assert = require('assert');
-var CSV = require("../a-csv");
+var CSV = require("../../index");
 var count = 0;
 var start = new Date().getTime();
 

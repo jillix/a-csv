@@ -173,7 +173,14 @@ function CSVRowToArray(strData, strDelimiter) {
     
     // Check to see if the delimiter is defined. If not,
     // then default to comma.
-    strDelimiter = strDelimiter || defDelimiter;
+    strDelimiter = strDelimiter || ",";
+    
+    // if strData begins with a comma
+    if (strData[0] === strDelimiter) {
+        // add one more comma (this fixes #6)
+        strData = strDelimiter + strData;
+    }
+
     
     // Create a regular expression to parse the CSV values.
     var objPattern = new RegExp((
