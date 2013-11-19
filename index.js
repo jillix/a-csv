@@ -176,9 +176,9 @@ function CSVRowToArray(strData, strDelimiter) {
     strDelimiter = strDelimiter || ",";
     
     // if strData begins with a comma
-    if (strData[0] === ",") {
+    if (strData[0] === strDelimiter) {
         // add one more comma (this fixes #6)
-        strData = "," + strData;
+        strData = strDelimiter + strData;
     }
 
     
