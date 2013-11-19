@@ -3,8 +3,18 @@
     "version": "0.1.8",
     "description": "A CSV parsing/stringify module",
     "author": "Adrian Ottiker <adrian@ottiker.com>",
+    "contributors": [
+        {
+            "name":  "Adrian Ottiker",
+            "email": "adrian@ottiker.com"
+        },
+        {
+            "name":  "Ionică Bizău",
+            "email": "bizauionica@gmail.com"
+        }
+    ],
     "dependencies": {
-        
+
         "iconv-lite":  "0.x.x"
     },
     "devDependencies": {
