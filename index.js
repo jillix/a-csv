@@ -64,7 +64,7 @@ exports.parse = function (path, options, rowHandler) {
                 else {
                     
                     // fill buffer with emptiness
-                    buffer.fill("");
+                    buffer.fill(0);
                     
                     fs.read(fd, buffer, 0, length, null, function (err, bytesRead, buffer) {
                         
@@ -211,7 +211,7 @@ function CSVRowToArray(strData, strDelimiter) {
         // captured (quoted or unquoted).
         var strMatchedValue;
         
-        if (arrMatches[2]) {
+        if (arrMatches[2]) {
             
             // We found a quoted value. When we capture
             // this value, unescape any double quotes.
