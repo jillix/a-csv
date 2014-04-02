@@ -211,7 +211,7 @@ function CSVRowToArray(strData, strDelimiter) {
         // captured (quoted or unquoted).
         var strMatchedValue;
         
-        if (arrMatches[2]) {
+        if (arrMatches[2]) {
             
             // We found a quoted value. When we capture
             // this value, unescape any double quotes.
