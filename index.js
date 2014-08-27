@@ -68,7 +68,6 @@ exports.parse = function (path, options, rowHandler) {
                     fs.read(fd, buffer, 0, length, null, function (err, bytesRead, buffer) {
 
                         if (err) {
-
                             rowHandler(err);
                         }
                         else {
@@ -80,14 +79,12 @@ exports.parse = function (path, options, rowHandler) {
 
                             // update string buffer
                             if (charset == "utf8") {
-
-                                strBuffer += buffer.toString();
+                                strBuffer += buffer.toString("utf8", 0, bytesRead);
                             }
                             // convert string to utf8
                             else {
-
                                 // TODO recognize charset
-                                strBuffer += iconv.decode(buffer, charset);
+                                strBuffer += iconv.decode(bytesRead < length ? buffer.slice(0, bytesRead) : buffer, charset);
                             }
 
                             // convert line endings
@@ -98,7 +95,6 @@ exports.parse = function (path, options, rowHandler) {
 
                             // indicate that no more data will be read from file
                             if (bytesRead < length) {
-
                                 theEnd = true;
                             } else {
                                 // set buffer to the last "incomplete" row if not at the end of file
