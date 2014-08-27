@@ -1,6 +1,6 @@
 {
   "name": "a-csv",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A CSV parsing/stringify module",
   "author": "Adrian Ottiker <adrian@ottiker.com>",
   "contributors": [
