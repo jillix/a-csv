@@ -1,11 +1,12 @@
 {
   "name": "a-csv",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A CSV parsing/stringify module",
   "author": "Adrian Ottiker <adrian@ottiker.com>",
   "contributors": [
     "Adrian Ottiker <adrian@ottiker.com>",
-    "Ionică Bizău <bizauionica@gmail.com>"
+    "Ionică Bizău <bizauionica@gmail.com>",
+    "Dan Andrei <andreidani96@gmail.com>"
   ],
   "dependencies": {
     "iconv-lite": "0.x.x"

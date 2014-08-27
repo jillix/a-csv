@@ -44,7 +44,6 @@ exports.parse = function (path, options, rowHandler) {
 
                 // fire rowHandler if there still rows to emit
                 if (typeof rows[++current] != "undefined") {
-
                     // fire callback with row data
                     rowHandler(null, CSVRowToArray(rows[current], delimiter), handleRow);
                 }
@@ -97,13 +96,13 @@ exports.parse = function (path, options, rowHandler) {
                             // create rows
                             rows = strBuffer.split(/\n/);
 
-                            // set buffer to the last "incomplete" row
-                            strBuffer = rows.pop();
-
                             // indicate that no more data will be read from file
                             if (bytesRead < length) {
 
                                 theEnd = true;
+                            } else {
+                                // set buffer to the last "incomplete" row if not at the end of file
+                                strBuffer = rows.pop();
                             }
 
                             // continue
