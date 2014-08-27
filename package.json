@@ -1,37 +1,39 @@
 {
-    "name": "a-csv",
-    "version": "0.2.1",
-    "description": "A CSV parsing/stringify module",
-    "author": "Adrian Ottiker <adrian@ottiker.com>",
-    "contributors": [
-        {
-            "name":  "Adrian Ottiker",
-            "email": "adrian@ottiker.com"
-        },
-        {
-            "name":  "Ionică Bizău",
-            "email": "bizauionica@gmail.com"
-        }
-    ],
-    "dependencies": {
-
-        "iconv-lite":  "0.x.x"
-    },
-    "devDependencies": {
-        "mocha": "1.x.x"
-    },
-    "scripts": {
-        "test": "mocha"
-    },
-    "engine": "node >= 0.8.0",
-    "keywords": [
-        "csv",
-        "parse",
-        "parser",
-        "stringify"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/adioo/a-csv"
-    }
+  "name": "a-csv",
+  "version": "0.2.1",
+  "description": "A CSV parsing/stringify module",
+  "author": "Adrian Ottiker <adrian@ottiker.com>",
+  "contributors": [
+    "Adrian Ottiker <adrian@ottiker.com>",
+    "Ionică Bizău <bizauionica@gmail.com>"
+  ],
+  "dependencies": {
+    "iconv-lite": "0.x.x"
+  },
+  "devDependencies": {
+    "mocha": "1.x.x"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "engine": "node >= 0.8.0",
+  "keywords": [
+    "csv",
+    "parse",
+    "parser",
+    "stringify"
+  ],
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jillix/a-csv.git"
+  },
+  "license": "THE BEER-WARE LICENSE",
+  "bugs": {
+    "url": "https://github.com/jillix/a-csv/issues"
+  },
+  "homepage": "https://github.com/jillix/a-csv"
 }
