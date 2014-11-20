@@ -1,7 +1,7 @@
 {
   "name": "a-csv",
   "version": "0.2.3",
-  "description": "A CSV parsing/stringify module",
+  "description": "A lightweight CSV parser.",
   "author": "Adrian Ottiker <adrian@ottiker.com>",
   "contributors": [
     "Adrian Ottiker <adrian@ottiker.com>",
@@ -9,7 +9,7 @@
     "Dan Andrei <andreidani96@gmail.com>"
   ],
   "dependencies": {
-    "iconv-lite": "0.x.x"
+    "iconv-lite": "0.4.5"
   },
   "devDependencies": {
     "mocha": "1.x.x"
@@ -32,7 +32,7 @@
     "type": "git",
     "url": "https://github.com/jillix/a-csv.git"
   },
-  "license": "THE BEER-WARE LICENSE",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jillix/a-csv/issues"
   },
