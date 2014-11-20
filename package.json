@@ -1,6 +1,6 @@
 {
   "name": "a-csv",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "description": "A lightweight CSV parser.",
   "author": "Adrian Ottiker <adrian@ottiker.com>",
   "contributors": [
