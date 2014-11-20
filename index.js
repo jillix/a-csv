@@ -13,6 +13,11 @@ var CSV = module.exports = {};
  * @function
  * @param {String} path Path to CSV file.
  * @param {Object} options An object containing the following properties:
+ *
+ *  - `delimiter` (String): The CSV delimiter (default: ",").
+ *  - `length` (Number): The buffer size (default: `8 * 1024`).
+ *  - `charset` (String): The charset (default: `"utf8"`).
+ *
  * @param {Function} rowHandler The row handler callback (called with `err`, `data`, `next` arguments).
  * @return {undefined}
  */
