@@ -3,7 +3,7 @@ var fs = require("fs");
 var iconv = require("iconv-lite");
 
 // Constructor
-var CSV = {};
+var CSV = module.exports = {};
 
 /**
  * parse
