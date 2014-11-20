@@ -165,7 +165,7 @@ CSV.stringify = function (csvArray, delimiter, lineBreak) {
     string += lineBreak;
 
     return string;
-}
+};
 
 /*!
  * CSVRowToArray
