@@ -1,32 +1,41 @@
+// Dependencies
 var fs = require("fs");
 var iconv = require("iconv-lite");
 
-// TODO parse csv from network stream
-exports.parse = function (path, options, rowHandler) {
+// Constructor
+var CSV = {};
+
+/**
+ * parse
+ * Parses CSV files.
+ *
+ * @name parse
+ * @function
+ * @param {String} path Path to CSV file.
+ * @param {Object} options An object containing the following properties:
+ * @param {Function} rowHandler The row handler callback (called with `err`, `data`, `next` arguments).
+ * @return {undefined}
+ */
+CSV.parse = function(path, options, rowHandler) {
+    // TODO parse csv from network stream
 
     // ckeck arguments
     if (typeof options == "function") {
-
         rowHandler = options;
-    }
-    else if (typeof rowHandler != "function") {
-
+    } else if (typeof rowHandler != "function") {
         throw new Error("Callback is mandatory");
     }
 
     if (typeof path != "string") {
-
         throw new Error("Invalid Path");
     }
 
-    // open file
-    fs.open(path, "r", function (err, fd) {
+    // Open file
+    fs.open(path, "r", function(err, fd) {
 
         if (err) {
-
             rowHandler(err);
-        }
-        else {
+        } else {
 
             // default values
             var delimiter = options.delimiter || ",";
@@ -40,7 +49,7 @@ exports.parse = function (path, options, rowHandler) {
             var rows = [];
             var theEnd = false;
             var size = 0;
-            var handleRow = function () {
+            var handleRow = function() {
 
                 // fire rowHandler if there still rows to emit
                 if (typeof rows[++current] != "undefined") {
@@ -55,7 +64,7 @@ exports.parse = function (path, options, rowHandler) {
                     fs.close(fd, function() {
 
                         // end recursive function calls
-                        rowHandler(null, null, function () {}, size);
+                        rowHandler(null, null, function() {}, size);
                     });
                 }
 
@@ -65,12 +74,11 @@ exports.parse = function (path, options, rowHandler) {
                     // fill buffer with emptiness
                     buffer.fill(0);
 
-                    fs.read(fd, buffer, 0, length, null, function (err, bytesRead, buffer) {
+                    fs.read(fd, buffer, 0, length, null, function(err, bytesRead, buffer) {
 
                         if (err) {
                             rowHandler(err);
-                        }
-                        else {
+                        } else {
 
                             size += bytesRead;
 
@@ -114,39 +122,39 @@ exports.parse = function (path, options, rowHandler) {
     });
 };
 
-// TODO make stringify async
 
-// array to string
-exports.stringify = ArrayToCSVRow;
-
-function ArrayToCSVRow (arry, delimiter, lineBreak) {
+/**
+ * stringify
+ * Stringifies a CSV array.
+ *
+ * @name stringify
+ * @function
+ * @param {Array} csvArray The CSV array.
+ * @param {String} delimiter The delimiter (default: `","`).
+ * @param {Object} lineBreak The line break delimiter (default: `"\r\n"`).
+ * @return {String} The stringified CSV array.
+ */
+CSV.stringify = function (csvArray, delimiter, lineBreak) {
+    // TODO make stringify async
 
     //default values
     delimiter = delimiter || ",";
     lineBreak = lineBreak || "\r\n";
 
     var string = "";
-
-    for (var i = 0, l = arry.length; i < l; ++i) {
-
-            var cell = arry[i] && arry[i].toString ? arry[i].toString() : "";
-
-            if (cell) {
-
-                // use quotation marks when delimiter is found in a cell
-                if (cell.indexOf(delimiter) > -1) {
-
-                    if (cell.indexOf('"') > -1) {
-
-                        cell = cell.replace('"', '\"');
-                    }
-
-                    cell = '"' + cell + '"';
+    for (var i = 0, l = csvArray.length; i < l; ++i) {
+        var cell = csvArray[i] && csvArray[i].toString ? csvArray[i].toString() : "";
+        if (cell) {
+            // use quotation marks when delimiter is found in a cell
+            if (cell.indexOf(delimiter) > -1) {
+                if (cell.indexOf('"') > -1) {
+                    cell = cell.replace('"', '\"');
                 }
-
-                string += cell + delimiter;
+                cell = '"' + cell + '"';
             }
-            else string += delimiter;
+
+            string += cell + delimiter;
+        } else string += delimiter;
     }
 
     string += lineBreak;
@@ -154,10 +162,18 @@ function ArrayToCSVRow (arry, delimiter, lineBreak) {
     return string;
 }
 
-// http://www.bennadel.com/blog/1504-Ask-Ben-Parsing-CSV-Strings-With-Javascript-Exec-Regular-Expression-Command.htm
-// This will parse a delimited string into an array.
-// The default delimiter is the comma, but this
-// can be overriden in the second argument.
+/*!
+ * CSVRowToArray
+ * This will parse a delimited string into an array.
+ * The default delimiter is the comma, but this
+ * can be overriden in the second argument.
+ *
+ * @name CSVRowToArray
+ * @function
+ * @param {String} strData The input string value.
+ * @param {String} strDelimiter The CSV field delimiter.
+ * @return {Array} The CSV array parsed from input string.
+ */
 function CSVRowToArray(strData, strDelimiter) {
 
     // return if strData is an empty array
@@ -170,9 +186,9 @@ function CSVRowToArray(strData, strDelimiter) {
     // then default to comma.
     strDelimiter = strDelimiter || ",";
 
-    // if strData begins with a comma
+    // If strData begins with a comma
     if (strData[0] === strDelimiter) {
-        // add one more comma (this fixes #6)
+        // Add one more comma
         strData = strDelimiter + strData;
     }
 
@@ -211,8 +227,7 @@ function CSVRowToArray(strData, strDelimiter) {
             // We found a quoted value. When we capture
             // this value, unescape any double quotes.
             strMatchedValue = arrMatches[2].replace(new RegExp("\"\"", "g"), "\"");
-        }
-        else {
+        } else {
 
             // We found a non-quoted value.
             strMatchedValue = arrMatches[3];
