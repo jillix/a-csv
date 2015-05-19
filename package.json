@@ -11,11 +11,8 @@
   "dependencies": {
     "iconv-lite": "0.4.5"
   },
-  "devDependencies": {
-    "mocha": "1.x.x"
-  },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha test"
   },
   "engine": "node >= 0.8.0",
   "keywords": [
