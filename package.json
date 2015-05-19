@@ -39,5 +39,7 @@
     "iconv-lite": "^0.4.8",
     "is-there": "^2.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "mocha": "^2.2.5"
+  }
 }
