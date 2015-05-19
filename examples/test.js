@@ -1,4 +1,4 @@
-var CSV = require("../../index");
+var CSV = require("../lib");
 var count = 0;
 var start = new Date().getTime();
 
