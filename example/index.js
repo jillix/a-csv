@@ -6,7 +6,8 @@ var file = __dirname + "/csv-file.csv";
 
 var options = {
     delimiter: ",",
-    charset: "utf8"
+    charset: "utf8",
+    headers: true
 }
 
 // push here the rows
