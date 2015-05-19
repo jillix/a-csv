@@ -3,6 +3,9 @@
   "version": "2.0.0",
   "description": "A lightweight CSV parser.",
   "author": "jillix <contact@jillix.com>",
+  "bin": {
+    "a-csv": "./bin/a-csv"
+  },
   "contributors": [
     "Adrian Ottiker <adrian@ottiker.com>",
     "Ionică Bizău <bizauionica@gmail.com>",
