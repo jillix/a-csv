@@ -9,6 +9,38 @@ Run the following commands to download and install the application:
 $ npm install a-csv
 ```
 
+# CLI Tool
+There is a command line tool as well and it's available if you install this package
+globally:
+
+```sh
+$ npm install -g a-csv
+```
+
+Run `a-csv -h` for help content.
+
+```sh
+$ a-csv -h
+Usage: a-csv [options]
+
+Options:
+  -l, --length <length>    The buffer size.
+  -c, --charset <charset>  The file charset
+  -i, --ignore-headers     Ignore the first line in the input file.
+  -s, --source <path>      The source csv file.
+  --verbose                Display additional log messages.
+  -h, --help               Displays this help.
+  -v, --version            Displays version information.
+
+Examples:
+  a-csv -s path/to/file.csv
+  a-csv -s path/to/file.csv -i
+  a-csv -s path/to/file.csv -l 2048
+  a-csv -s path/to/file.csv -c ascii
+
+Documentation can be found at https://github.com/jillix/a-csv
+```
+
 # Example
 
 ```js
