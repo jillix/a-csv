@@ -1,6 +1,6 @@
 {
   "name": "a-csv",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A lightweight CSV parser.",
   "author": "jillix <contact@jillix.com>",
   "contributors": [
@@ -8,9 +8,6 @@
     "Ionică Bizău <bizauionica@gmail.com>",
     "Dan Andrei <andreidani96@gmail.com>"
   ],
-  "dependencies": {
-    "iconv-lite": "0.4.8"
-  },
   "scripts": {
     "test": "mocha test"
   },
@@ -30,5 +27,17 @@
   "bugs": {
     "url": "https://github.com/jillix/a-csv/issues"
   },
-  "homepage": "https://github.com/jillix/a-csv"
+  "homepage": "https://github.com/jillix/a-csv",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "dependencies": {
+    "bug-killer": "^1.0.0",
+    "clp": "^1.2.0",
+    "fs-plus": "^2.8.1",
+    "iconv-lite": "^0.4.8",
+    "is-there": "^2.0.0"
+  },
+  "devDependencies": {}
 }
