@@ -18,39 +18,28 @@ const EXPECT = {
   ]
 };
 
-it("should parse the csv file, with default options", function (cb) {
-    var rows = [];
-    CSV.parse(__dirname + "/headers.csv", function (err, row, next) {
+function gen(h) {
+    return function (cb) {
+        var rows = [];
+        CSV.parse(__dirname + "/headers.csv", { headers: h }, function (err, row, next) {
 
-        if (err) {
-            return cb(err);
-        }
+            if (err) {
+                return cb(err);
+            }
 
-        if (row === null) {
-            console.log(rows);
-            Assert.deepEqual(rows, EXPECT.HEADERS);
-            return cb();
-        }
+            if (row === null) {
+                Assert.deepEqual(rows, EXPECT[(!h ? "": "NO_") + "HEADERS"]);
+                return cb();
+            }
 
-        rows.push(row);
-        next();
-    });
-});
+            rows.push(row);
+            next();
+        });
+    }
+}
 
-it("should parse the csv file, handling the headers", function (cb) {
-    var rows = [];
-    CSV.parse(__dirname + "/headers.csv", { headers: true }, function (err, row, next) {
+// Include headers
+it("should parse the csv file, with default options", gen(true));
 
-        if (err) {
-            return cb(err);
-        }
-
-        if (row === null) {
-            Assert.deepEqual(rows, EXPECT.NO_HEADERS);
-            return cb();
-        }
-
-        rows.push(row);
-        next();
-    });
-});
+// Exclude headers
+it("should parse the csv file, handling the headers", gen(false));
