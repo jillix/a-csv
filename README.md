@@ -35,28 +35,30 @@ CSV.parse(file, options, function (err, row, next) {
 ```
 
 # Documentation
-## `parse(path, options, rowHandler)`
+### `parse(path, options, rowHandler)`
 Parses CSV files.
 
-### Params
+#### Params
 - **String** `path`: Path to CSV file.
 - **Object** `options`: An object containing the following properties:
  - `delimiter` (String): The CSV delimiter (default: ",").
  - `length` (Number): The buffer size (default: `8 * 1024`).
  - `charset` (String): The charset (default: `"utf8"`).
+ - `headers` (Boolean): A flag to indicate if the file contains headers or not (default: `false`).
 
 - **Function** `rowHandler`: The row handler callback (called with `err`, `data`, `next` arguments).
 
-## `stringify(csvArray, delimiter, lineBreak)`
+### `stringify(csvArray, delimiter, lineBreak)`
 Stringifies a CSV array.
 
-### Params
+#### Params
 - **Array** `csvArray`: The CSV array.
 - **String** `delimiter`: The delimiter (default: `","`).
 - **Object** `lineBreak`: The line break delimiter (default: `"\r\n"`).
 
-### Return
+#### Return
 - **String** The stringified CSV array.
+
 
 # How to contribute
 1. File an issue in the repository, using the bug tracker, describing the
