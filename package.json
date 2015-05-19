@@ -9,7 +9,7 @@
     "Dan Andrei <andreidani96@gmail.com>"
   ],
   "dependencies": {
-    "iconv-lite": "0.4.5"
+    "iconv-lite": "0.4.8"
   },
   "scripts": {
     "test": "mocha test"
